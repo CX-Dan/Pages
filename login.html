@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+    body{
+        margin: 0;
+    }
+        .background{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    left: 0px;
+    top: 0px;
+    background-image: url('https://identity-dev.reg-dev.companyx.nz/static/images/background.aea570de5c40487396ee.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+        }
+        .login-container{
+      display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+            padding:4rem;
+    width: 500px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+      color:black;
+        }
+        .logo{
+            max-width: 200px;
+            margin-bottom: 8px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="background">
+        <div class="login-container"
+        >
+            <image src="https://identity-dev.reg-dev.companyx.nz/static/images/reg-logo-orange.1ceaf0e619eb205727d7.svg" alt='Reg Logo' class="logo" />
+            <div id="api" role="main">
+
+            </div>
+        </div>
+    </div>
+   
+  </body>
+</html>
