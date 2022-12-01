@@ -89,15 +89,26 @@
         color: #9fa5ac;
       }
 
-      #api .entry .entry-item::before  {
-        content: " ";
-        background-image: url(https://cx-dan.github.io/Pages/password-icon.svg);
-        background-position: left;
-        background-size: contain;
-        background-repeat: no-repeat;
+      #api .entry:nth-child(1) .entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
         white-space: nowrap;
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        top: 44.8%;
+        z-index: 999;
+        left: 15%;
+      }
+
+      #api .entry:nth-child(2) .entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
+        white-space: nowrap;
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        top: 54.8%;
+        z-index: 999;
+        left: 15%;
       }
 
       /* Microsoft invalid input */
