@@ -108,14 +108,6 @@
         font-weight: 400;
       }
 
-      #createAccount {
-        display: none;
-      }
-
-      #createAccount::after {
-        content: "Register Here";
-      }
-
       #forgotPassword:hover, #createAccount:hover {
         text-decoration: none;
       }
@@ -217,7 +209,7 @@
       }
 
       /* Edge */
-      @supports (not (-webkit-hyphens:none)) and (not (-moz-appearance:none))  {
+      @supports (-ms-ime-align:auto)  {
         .icon-email {
           top: 44.4% !important;
         }
