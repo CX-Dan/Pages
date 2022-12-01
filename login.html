@@ -193,7 +193,7 @@
         top: 51.1%;
         left: 15%;
       }
-
+      /* FireFox */
       @supports (-moz-appearance:none) {
         .icon-email {
           top: 44.5% !important;
@@ -203,6 +203,17 @@
           top: 50.5% !important;
         }
       }
+      /* Edge */
+      @supports (-ms-ime-align:auto) {
+        .icon-email {
+          top: 44.4% !important;
+        }
+        .icon-password {
+          top: 51.4% !important;
+        }
+      }
+
+
     </style>
 
   </head>
