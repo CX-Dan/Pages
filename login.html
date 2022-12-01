@@ -89,6 +89,17 @@
         color: #9fa5ac;
       }
 
+      #api .entry .entry-item input::before  {
+        content: "";
+        background-image: url(https://cx-dan.github.io/Pages/password-icon.svg);
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        white-space: nowrap;
+        height: 20px;
+        width: 20px;
+      }
+
       /* Microsoft invalid input */
       input.highlightError {
         border-color: rgb(229, 62, 62) !important;
@@ -185,7 +196,7 @@
       .icon {
         height: 18px;
         width: 18px;
-        position: absolute;
+        position: relative;
         z-index: 99;
         background-position: center;
         background-size: contain;
