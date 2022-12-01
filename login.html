@@ -10,6 +10,7 @@
     <style>
       * {
         box-sizing: border-box;
+        font-family: Arial, sans-serif;
       }
       body {
         margin: 0;
@@ -67,13 +68,68 @@
         padding-inline-start: 2.5rem;
         padding-inline-end: 1rem;
         height: 2.5rem;
-        border-radius: 5px;
+        border-radius: 2px;
         border-width: 1px;
         border-style: solid;
         border-image: initial;
-        border-color: grey;
+        border-color: #b9bfc6;
         background: white;
       }
+
+      #api .entry .entry-item input:focus {
+        border-color: gray;
+      }
+
+      #forgotPassword {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        text-decoration: underline;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        color: dodgerblue;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      /* Sign In Button */
+      #next {
+        margin-left: auto;
+        height: 100%;
+        font-size: 1rem;
+        padding: 5px;
+        display: inline-flex;
+        appearance: none;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        user-select: none;
+        position: relative;
+        white-space: nowrap;
+        vertical-align: middle;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        width: auto;
+        line-height: 1;
+        border-radius: 2px;
+        font-weight: bold;
+        transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+        transition-duration: 2000ms;
+        text-decoration: none;
+        height: 2.5rem;
+        min-width: 2.5rem;
+        font-size: 1rem;
+        padding-inline-start: 1rem;
+        padding-inline-end: 1rem;
+        background: #db640b;
+        color: white;
+      }
+
+      #next:hover {
+        background: #ab4e06;
+      }
+
     </style>
   </head>
 
