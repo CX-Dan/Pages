@@ -88,11 +88,13 @@
         margin-bottom: 0.5rem;
         color: #9fa5ac;
       }
-
+      
+      /* Set email input icon */
       div:first-child.entry-item::before  {
         content: url(https://cx-dan.github.io/Pages/email-icon.svg) !important;
       }
 
+      /* Input icons */
       .entry .entry-item::before  {
         content: url(https://cx-dan.github.io/Pages/password-icon.svg);
         white-space: nowrap;
@@ -102,6 +104,7 @@
         z-index: 999;
         padding: 0.75rem;
         margin-top: 1.5rem;
+        filter: invert(79%) sepia(13%) saturate(165%) hue-rotate(172deg) brightness(84%) contrast(82%);
       }
 
       /* Microsoft invalid input */
@@ -195,28 +198,6 @@
 
       .create a {
         margin-left: 2px;
-      }
-
-      .icon {
-        height: 18px;
-        width: 18px;
-        position: relative;
-        z-index: 99;
-        background-position: center;
-        background-size: contain;
-        filter: invert(79%) sepia(13%) saturate(165%) hue-rotate(172deg) brightness(84%) contrast(82%);
-      }
-
-      .icon-email {
-        background-image: url('https://cx-dan.github.io/Pages/email-icon.svg');
-        top: 46.2%;
-        left: 15%;
-      }
-      
-      .icon-password {
-        background-image: url('https://cx-dan.github.io/Pages/password-icon.svg');
-        top: 51.5%;
-        left: 15%;
       }
 
       /* FireFox */
