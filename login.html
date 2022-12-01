@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>1</title>
+    <title>Transport Insights - Te Ringa Maimoa</title>
+    <link rel="icon" href="https://identity.dev.transportinsights.nz/favicon.png" type="image/icon type">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +41,7 @@
         backdrop-filter: blur(4px);
         color:black;
       }
-      .logo{
+      .logo {
           max-width: 200px;
           margin-bottom: 8px;
       }
@@ -54,7 +55,24 @@
         display: none;
       }
       #api .entry .entry-item input {
-        display: none;
+        width: 100%;
+        min-width: 0px;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        position: relative;
+        appearance: none;
+        transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+        transition-duration: 2000ms;
+        font-size: 1rem;
+        padding-inline-start: 2.5rem;
+        padding-inline-end: 1rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-image: initial;
+        border-color: grey;
+        background: white;
       }
     </style>
   </head>
@@ -62,7 +80,8 @@
   <body>
     <div class="background">
       <div class="login-container">
-        <image src="https://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg" alt='Reg Logo' class="logo" />
+        <image src="http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg" alt='Reg Logo' class="logo" />
+        <br>
         <div id="api" role="main">
 
         </div>
