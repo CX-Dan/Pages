@@ -12,10 +12,12 @@
         box-sizing: border-box;
         font-family: Arial, sans-serif;
       }
+
       body {
         margin: 0;
         overflow: hidden;
       }
+
       .background {
         position: relative;
         width: 100%;
@@ -29,6 +31,7 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
+
       .login-container {
         position: relative;
         padding: 4rem;
@@ -44,25 +47,19 @@
       }
 
       .logo {
-          height: 85px;
-          max-height: 100px;
-          max-width: 200px;
-          margin-bottom: 8px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
-      }
-      #api .heading {
-        display: none;
-      }
-      #api .intro {
-        display: none;
-      }
-      #api .entry .entry-item label {
-        display: none;
+        margin-bottom: -1rem;
+        height: 85px;
+        max-height: 100px;
+        max-width: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
       }
 
-      #api .divider {
+      #api .heading,
+      #api .intro,
+      #api .divider,
+      #api .entry .entry-item label {
         display: none;
       }
 
@@ -94,7 +91,7 @@
 
       #forgotPassword {
         position: absolute;
-        top: 52%;
+        top: 58%;
       }
 
       #createAccount, #forgotPassword {
@@ -110,6 +107,7 @@
       #forgotPassword:hover, #createAccount:hover {
         text-decoration: none;
       }
+
       /* Sign In Button */
       #next {
         margin-left: auto;
@@ -159,12 +157,17 @@
         margin-top: rem;
         display: flex;
         align-items: center;
+        justify-content: center; 
       }
 
       .create p {
         color: #6c727a;
         font-size: 1rem;
         font-weight: 400;
+      }
+
+      .create a {
+        margin-left: 2px;
       }
 
       .icon-email, .icon-password {
