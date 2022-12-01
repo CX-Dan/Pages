@@ -89,26 +89,19 @@
         color: #9fa5ac;
       }
 
-      #api .entry .entry-item::before  {
-        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
-        white-space: nowrap;
-        height: 18px;
-        width: 18px;
-        position: absolute;
-        top: 44.8%;
-        z-index: 999;
-        left: 15%;
+      div:first-child.entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/email-icon.svg) !important;
       }
 
-      #api .entry:nth-child(2)::before  {
+      .entry .entry-item::before  {
         content: url(https://cx-dan.github.io/Pages/password-icon.svg);
         white-space: nowrap;
         height: 18px;
         width: 18px;
         position: absolute;
-        top: 54.8%;
         z-index: 999;
-        left: 15%;
+        padding: 0.75rem;
+        margin-top: 1.5rem;
       }
 
       /* Microsoft invalid input */
@@ -268,12 +261,9 @@
   <body>
     <div class="background">
       <div class="login-container">
-        <div class="icon icon-email"></div>
-        <div class="icon icon-password"></div>
         <div class="logo" ></div>
         <br>
-        <div id="api" role="main">
-        </div>
+        <div id="api" role="main"></div>
       </div>
     </div>
   </body>
