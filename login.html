@@ -88,6 +88,10 @@
         margin-bottom: 0.5rem;
         color: #9fa5ac;
       }
+
+      .entry-item {
+        position: relative;
+      }
       
       /* Set email input icon */
       div:first-child.entry-item::before  {
@@ -211,6 +215,12 @@
         }
       }
 
+      .error {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
       .error p {
         margin: 0;
         position: absolute;
@@ -225,7 +235,6 @@
     <div class="background">
       <div class="login-container">
         <div class="logo" ></div>
-        <br>
         <div id="api" role="main"></div>
       </div>
     </div>
