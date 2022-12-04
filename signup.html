@@ -63,7 +63,7 @@
         display: none;
       }
 
-      #attributeList {
+      #attributeList ul {
         list-style: none;
       }
 
@@ -109,6 +109,50 @@
       .attrEntry input:focus {
         border-color: #0083CB;
         box-shadow: rgb(16 148 229) 0px 0px 0px 1px;;
+      }
+
+      #continue {
+        margin-left: auto;
+        height: 100%;
+        font-size: 0.9rem;
+        padding: 5px;
+        display: inline-flex;
+        appearance: none;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        user-select: none;
+        position: relative;
+        white-space: nowrap;
+        vertical-align: middle;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        width: auto;
+        line-height: 1;
+        border-radius: 2px;
+        font-weight: bold;
+        transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+        transition-duration: 200ms;
+        text-decoration: none;
+        height: 2.5rem;
+        min-width: 2.5rem;
+        font-size: 1rem;
+        padding-inline-start: 1rem;
+        padding-inline-end: 1rem;
+        background: #db640b;
+        color: white;
+        border: none;
+      }
+
+      #continue:hover {
+        background: #ab4e06;
+        cursor: pointer;
+      }
+
+      .buttons {
+        display: flex;
+        margin-top: 1rem;
       }
 
     </style>
