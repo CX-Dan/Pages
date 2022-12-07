@@ -17,6 +17,24 @@
         overflow: hidden;
       }
 
+      /* Set email input icon */
+      div:first-child.entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/email-icon.svg) !important;
+      }
+
+      /* Input icons */
+      .entry .entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
+        white-space: nowrap;
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        z-index: 999;
+        padding: 0.75rem;
+        margin-top: 1.5rem;
+        filter: invert(79%) sepia(13%) saturate(165%) hue-rotate(172deg) brightness(84%) contrast(82%);
+      }
+
       .background {
         position: relative;
         width: 100%;
@@ -55,7 +73,7 @@
         background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
       }
 
-      .verificationControl {
+      .VerificationControl {
         display: none;
       }
 
@@ -69,6 +87,7 @@
 
       #attributeList ul {
         list-style: none;
+        margin-left: -2.5rem;
       }
 
       .attrEntry label {
