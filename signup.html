@@ -236,8 +236,12 @@
       }
 
     </style>
-    <script>
-      document.getElementsByClassName("test").style.color = "red";
+    <script type="text/javascript" defer>
+      function test() {
+        console.log('test')
+        console.log(document.getElementById("yolo"))
+      }
+      test();
     </script>
   </head>
 
@@ -249,7 +253,7 @@
           <br>
           <div id="api" role="main"></div>
           <p class="signIn">Have an account? <a class="signIn-link" href="https://amcf.b2c.transportinsights.nz/">Sign in here</a></p>
-          <div class="test">text</div>
+          <div id="yolo">text</div>
         </div>
       </div>
     </body>
