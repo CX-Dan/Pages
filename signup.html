@@ -219,10 +219,19 @@
         font-size: 14px;
       }
 
-      /* Microsoft invalid input */
-      input.highlightError {
-        border-color: rgb(229, 62, 62) !important;
-        box-shadow: rgb(229 62 62) 0px 0px 0px 1px !important;
+      .signIn {
+        color: #6c727a;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      .signIn-link {
+        cursor: pointer;
+        text-decoration: underline;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        color: #0083CB;
+        font-size: 0.9rem;
       }
 
     </style>
@@ -235,7 +244,7 @@
           <div class="logo" ></div>
           <br>
           <div id="api" role="main"></div>
-          <p class="chakra-text css-2catvg">Have an account? <a class="chakra-link css-18tdaxr" href="/login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Damcf%26redirect_uri%3Dhttps%253A%252F%252Famcf.dev.transportinsights.nz%252Foauth%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%2520email%2520profile%2520amcf.survey.read%26state%3D9d2b72b126634d208eeda3055f3a4a16%26code_challenge%3DzX2i1Y2DbpwTsB-ajJcOpIgi5cwRER68gsMwSaBrmWk%26code_challenge_method%3DS256%26response_mode%3Dquery">Sign in here</a></p>
+          <p class="signIn">Have an account? <a class="signIn-link" href="/login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Damcf%26redirect_uri%3Dhttps%253A%252F%252Famcf.dev.transportinsights.nz%252Foauth%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%2520email%2520profile%2520amcf.survey.read%26state%3D9d2b72b126634d208eeda3055f3a4a16%26code_challenge%3DzX2i1Y2DbpwTsB-ajJcOpIgi5cwRER68gsMwSaBrmWk%26code_challenge_method%3DS256%26response_mode%3Dquery">Sign in here</a></p>
         </div>
       </div>
     </body>
