@@ -236,29 +236,29 @@
       }
 
     </style>
-    <script type="text/javascript" defer >
-      function fixPasswordError() {
-        var elements = document.querySelectorAll(".Password .attrEntry .error");
-        var element = elements[0];
-        element.innerHTML = "Must be at least 8 characters with number and uppercase";
-      }
-
-      function customizeErrorMessage() {
-        var button = document.querySelector("#continue");
-        console.log(button)
-        button.addEventListener("click", fixPasswordError);
-      }
-    </script>
   </head>
-
-    <body onload="customizeErrorMessage()">
+    <body>
       <div class="background">
         <div class="signup-container">
           <div class="logo" ></div>
           <br>
-          <div onload="customizeErrorMessage()" id="api" role="main"></div>
+          <div id="api" role="main"></div>
           <p class="signIn">Have an account? <a class="signIn-link" href="https://amcf.b2c.transportinsights.nz/">Sign in here</a></p>
         </div>
       </div>
+      <script type="text/javascript" defer >
+        function fixPasswordError() {
+          var elements = document.querySelectorAll(".Password .attrEntry .error");
+          var element = elements[0];
+          element.innerHTML = "Must be at least 8 characters with number and uppercase";
+        }
+  
+        function customizeErrorMessage() {
+          var button = document.querySelector("#continue");
+          console.log(button)
+          button.addEventListener("click", fixPasswordError);
+        }
+        customizeErrorMessage();
+      </script>
     </body>
 </html>
