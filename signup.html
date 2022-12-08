@@ -260,7 +260,7 @@
       </div>
       <script type="text/javascript" defer >
         function fixPasswordError() {
-          var elements = document.querySelectorAll(".Password .attrEntry .error");
+          var elements = document.querySelectorAll(".Password .attrEntry .error.show");
           var element = elements[0];
           setTimeout(() => {
             element.innerHTML = "Must be at least 8 characters with number and uppercase";
