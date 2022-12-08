@@ -251,7 +251,9 @@
           var elements = document.querySelectorAll(".Password .attrEntry .error");
           var element = elements[0];
           console.log(element);
-          element.innerHTML = "Must be at least 8 characters with number and uppercase";
+          setTimeout(() => {
+            element.innerHTML = "Must be at least 8 characters with number and uppercase";
+          }, 500);
         }
   
         function customizeErrorMessage() {
