@@ -3,67 +3,12 @@
   <head>
     <title>Transport Insights - Te Ringa Maimoa</title>
     <link rel="icon" href="https://identity.dev.transportinsights.nz/favicon.png" type="image/icon type">
+    <link rel="stylesheet" href="./common.css">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <style>
-      * {
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        min-height: 100%;
-        left: 0;
-        top: 0;
-        background-image: url('https://identity-dev.reg-dev.companyx.nz/static/images/background.aea570de5c40487396ee.jpg');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-      }
-
-      .login-container {
-        position: relative;
-        padding: 4rem;
-        display: flex;
-        flex-direction: column;
-        -webkit-box-pack: center;
-        justify-content: center;
-        width: 500px;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(4px);
-        color:black;
-      }
-
-      .logo {
-        margin-bottom: -1rem;
-        height: 85px;
-        max-height: 100px;
-        max-width: 200px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
-      }
-
-      /* Remove additional Microsoft elements */
-      #api .heading,
-      #api .intro,
-      #api .divider,
-      #api .entry .entry-item label {
-        display: none;
-      }
-
       /* Microsoft input elements */
       #api .entry .entry-item input {
         width: 100%;

@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+  background-image: url('https://identity-dev.reg-dev.companyx.nz/static/images/background.aea570de5c40487396ee.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.forgot-password-container {
+  position: relative;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 500px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  color:black;
+}
+
+.logo {
+  margin-bottom: -1rem;
+  height: 85px;
+  max-height: 100px;
+  max-width: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
+}
+
+.body {
+  color: #6c727a;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#continue {
+  margin-left: auto;
+  height: 100%;
+  font-size: 0.9rem;
+  padding: 5px;
+  display: inline-flex;
+  appearance: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  width: auto;
+  line-height: 1;
+  border-radius: 2px;
+  font-weight: bold;
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+  transition-duration: 200ms;
+  text-decoration: none;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  font-size: 1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  background: #db640b;
+  color: white;
+  border: none;
+}
+
+#continue:hover {
+  background: #ab4e06;
+  cursor: pointer;
+}
+
+
+/* Remove additional Microsoft elements */
+.helpLink,
+#api .heading,
+#api .intro,
+#api .divider,
+#api .entry .entry-item label {
+  display: none;
+}
