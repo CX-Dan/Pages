@@ -250,15 +250,13 @@
         function fixPasswordError() {
           var elements = document.querySelectorAll(".Password .attrEntry .error");
           var element = elements[0];
-          console.log(element);
           setTimeout(() => {
             element.innerHTML = "Must be at least 8 characters with number and uppercase";
-          }, 500);
+          }, 100);
         }
   
         function customizeErrorMessage() {
           var button = document.querySelector("#continue");
-          console.log(button)
           button.addEventListener("click", fixPasswordError);
         }
         customizeErrorMessage();
