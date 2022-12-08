@@ -236,7 +236,7 @@
       }
 
     </style>
-    <script type="text/javascript" defer="true" >
+    <script type="text/javascript" defer >
       function fixPasswordError() {
         var elements = document.querySelectorAll(".Password .attrEntry .error");
         var element = elements[0];
@@ -245,12 +245,13 @@
 
       function runFix() {
         var button = document.querySelector("#continue");
+        console.log(button)
         button.addEventListener("click", fixPasswordError);
       }
     </script>
   </head>
 
-    <body>
+    <body onload="runFix()">
       <div class="background">
         <div class="signup-container">
           <div class="logo" ></div>
