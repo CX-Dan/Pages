@@ -242,6 +242,11 @@
         var element = elements[0];
         element.innerHTML = "Must be at least 8 characters with number and uppercase";
       }
+
+      function runFix() {
+        var button = document.querySelector("#continue");
+        button.addEventListener("click", fixPasswordError);
+      }
     </script>
   </head>
 
@@ -250,7 +255,7 @@
         <div class="signup-container">
           <div class="logo" ></div>
           <br>
-          <div onload="fixPasswordError()" id="api" role="main"></div>
+          <div onload="runFix()" id="api" role="main"></div>
           <p class="signIn">Have an account? <a class="signIn-link" href="https://amcf.b2c.transportinsights.nz/">Sign in here</a></p>
         </div>
       </div>
