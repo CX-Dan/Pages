@@ -261,14 +261,16 @@
       <script type="text/javascript" defer >
         function fixPasswordError() {
           var elements = document.querySelectorAll(".Password .attrEntry .error.show");
-          var element = elements[0];
           setTimeout(() => {
-            element.innerHTML = "Must be at least 8 characters with number and uppercase";
+            elements.forEach(element => {
+              element.innerHTML = "Must be at least 8 characters with number and uppercase";
+            });
           }, 10);
         }
   
         function customizeErrorMessage() {
           var button = document.querySelector("#continue");
+          button.innerHTML = "Register";
           button.addEventListener("click", fixPasswordError);
         }
         customizeErrorMessage();
