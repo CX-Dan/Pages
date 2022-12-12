@@ -281,7 +281,11 @@
     </div>
     <script>
       function setRegisterText() {
-        document.getElementById("createAccount").innerText = "Register here";
+        var el = document.getElementById("createAccount");
+        console.log(el);
+        if (el) {
+          el.innerHTML = "Register here";
+        }
       }
 
       setRegisterText();
