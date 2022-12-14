@@ -269,6 +269,7 @@
 
       .customLabel {
         display: flex;
+        flex-direction: row;
         -webkit-box-align: center;
         align-items: center;
         padding: 0rem 0.75rem;
@@ -283,9 +284,31 @@
       .text {
         color: #4a4453;
         font-size: 0.9rem;
-
       }
 
+      .icon {
+        height: 18px;
+        width: 25px;
+        z-index: 999;
+        padding: 0.75rem;
+        margin-right: 1rem;
+        filter: invert(79%) sepia(13%) saturate(165%) hue-rotate(172deg) brightness(84%) contrast(82%);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .time {
+        background-image: url(https://cx-dan.github.io/Pages/static/assets/time-icon.svg) !important;
+      }
+
+      .enter {
+        background-image: url(https://cx-dan.github.io/Pages/static/assets/enter-icon.svg) !important;
+      }
+
+      .customLabel-container {
+        display: flex;
+        flex-direction: column;
+      }
 
     </style>
 
@@ -296,8 +319,9 @@
       <div class="login-container">
         <div class="logo" ></div>
         <div id="api" role="main"></div>
-        <div>
+        <div class="customLabel-container">
           <div class="customLabel"> 
+            <div class="icon enter"></div>  
             <p class="text">
               No account? 
               <a class="link" href="https://cx-dan.github.io/Pages/home">
@@ -306,6 +330,7 @@
             </p>
           </div>
           <div class="customLabel"> 
+            <div class="icon time"></div> 
             <p class="text">
               First time? Go to the 
               <a class="link" href="https://pmrt.transportinsights.nz/Home/HelpLink/new-to">
@@ -319,7 +344,6 @@
     <script>
       function setRegisterText() {
         var el = document.getElementById("createAccount");
-        console.log(el);
         if (el) {
           el.innerHTML = "Register here";
         }
