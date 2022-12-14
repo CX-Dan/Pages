@@ -164,11 +164,11 @@
       }
 
       #attributeList ul .EmailBox .attrEntry::before {
-        margin-top: 2.6rem;
         content: url({{assetsUrl}}/email-icon.svg);
       }
 
       #attributeList ul .TextBox .attrEntry::before {
+        margin-top: 2.6rem;
         content: url({{assetsUrl}}/email-icon.svg);
       }
 
@@ -298,7 +298,53 @@
           button.innerHTML = "Register";
           button.addEventListener("click", fixPasswordError);
         }
+
+        function changeSendCodeButtonText() {
+        var sendCodeButton = document.getElementById("emailVerificationControl_but_send_new_code");
+        sendCodeButton.innerHTML = "Didn't get the code? Click to resend";
+      }
+      
+      // Replace success message text with loading after send code clicked
+      function setLoading() {
+        var successMessage = document.getElementById("emailVerificationControl_success_message");
+        setTimeout(function() {
+          successMessage.innerHTML = "Sending Verification Code...";
+          successMessage.style.display = "block"
+        }, 10);
+      }
+
+
+      function attachSendCodeListener() {
+        var sendCodeButton = document.getElementById("emailVerificationControl_but_send_code");
+        sendCodeButton.addEventListener("click", setLoading);
+      }
+
+      // Listen for success message and enable continue button
+      function listenForSuccess() {
+        var continueButton = document.getElementById("continue");
+        continueButton.disabled = true;
+        var successMessage = document.getElementById("emailVerificationControl_success_message");
+        var successMessageObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type == "attributes") {
+              if (mutation.target.style.display !== 'none' && mutation.target.innerText.includes("E-mail address verified")) {
+                successMessageObserver.disconnect();
+                continueButton.disabled = false;
+              }
+            }
+          });
+        });
+        successMessageObserver.observe(successMessage, { attributes: true });
+      }
+
+      function main(){
+        changeSendCodeButtonText();
+        attachSendCodeListener();
+        listenForSuccess();
         customizeErrorMessage();
+      }
+
+      main();
       </script>
     </body>
 </html>

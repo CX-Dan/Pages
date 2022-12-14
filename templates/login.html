@@ -178,7 +178,7 @@
         margin-bottom: -3rem;
       }
 
-      #createAccount, #forgotPassword {
+      #createAccount, #forgotPassword,.link {
         cursor: pointer;
         text-decoration: underline;
         outline: transparent solid 2px;
@@ -271,7 +271,7 @@
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-        padding: 0.75rem;
+        padding: 0rem 0.75rem;
         margin-top: 2rem;
         border-radius: 0.375rem;
         border-width: 1px;
@@ -282,7 +282,10 @@
 
       .text {
         color: #4a4453;
+        font-size: 0.9rem;
+
       }
+
 
     </style>
 
@@ -297,7 +300,7 @@
           <div class="customLabel"> 
             <p class="text">
               No account? 
-              <a href="{{baseUrl}}/home">
+              <a class="link" href="{{baseUrl}}/home">
                 View without logging in
               </a>
             </p>
@@ -305,7 +308,7 @@
           <div class="customLabel"> 
             <p class="text">
               First time? Go to the 
-              <a class="chakra-link css-18tdaxr" href="{{introUrl}}">
+              <a class="link" href="{{introUrl}}">
                 introduction page
               </a>
             </p>
