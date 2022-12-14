@@ -5,10 +5,10 @@
   "main": "setupTemplates.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:local": "NODE_ENV=local node setupTemplates.js",
-    "build:dev": "NODE_ENV=dev node setupTemplates.js",
-    "build:b2c": "NODE_ENV=b2c node setupTemplates.js",
-    "build:prod": "NODE_ENV=prod node setupTemplates.js"
+    "build:local": "STAGE=local node setupTemplates.js",
+    "build:dev": "STAGE=dev node setupTemplates.js",
+    "build:b2c": "STAGE=b2c node setupTemplates.js",
+    "build:prod": "STAGE=prod node setupTemplates.js"
   },
   "author": "",
   "license": "ISC"

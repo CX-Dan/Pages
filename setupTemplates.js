@@ -1,26 +1,30 @@
 const fs = require('fs');
 const path = require('path');
-const { NODE_ENV } = process.env
+const { STAGE } = process.env
 const OUT_FILE_PATH = path.join(__dirname, '/public/');
 
 const configurations = {
   local: {
     baseUrl: 'https://cx-dan.github.io/Pages',
     assetsUrl: 'https://cx-dan.github.io/Pages/static/assets',
-    introUrl: "https://pmrt.transportinsights.nz/Home/HelpLink/new-to"
+    introUrl: "https://pmrt.dev.transportinsights.nz/Home/HelpLink/new-to"
 
   },
   dev: {
     baseUrl: 'https://portal.dev.transportinsights.nz',
     assetsUrl: "https://portal.dev.transportinsights.nz/static",
-    introUrl: "https://pmrt.transportinsights.nz/Home/HelpLink/new-to"
+    introUrl: "https://pmrt.dev.transportinsights.nz/Home/HelpLink/new-to"
 
+  },
+  b2c: {
+    baseUrl: 'https://portal.b2c.transportinsights.nz',
+    assetsUrl: "https://portal.b2c.transportinsights.nz/static",
+    introUrl: "https://pmrt.b2c.transportinsights.nz/Home/HelpLink/new-to"
   },
   prod: {
     baseUrl: 'https://portal.transportinsights.nz',
     assetsUrl: "https://portal.transportinsights.nz/static",
     introUrl: "https://pmrt.transportinsights.nz/Home/HelpLink/new-to"
-
   },
 }
 
@@ -47,7 +51,7 @@ function main() {
           return console.error(err);
         }
 
-        fs.writeFile(path.join(OUT_FILE_PATH, file), replaceVariables(configurations[NODE_ENV], data), (err) => {
+        fs.writeFile(path.join(OUT_FILE_PATH, file), replaceVariables(configurations[STAGE], data), (err) => {
           if (err) {
             return console.error(err);
           }
