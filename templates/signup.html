@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Transport Insights - Te Ringa Maimoa</title>
-    <link rel="icon" href="https://identity.dev.transportinsights.nz/favicon.png" type="image/icon type">
-    <link rel="stylesheet" href="./common.css">
+    <link rel="icon" href="{{baseUrl}}/static/favicon.png" type="image/icon type">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,14 +24,14 @@
         min-height: 100%;
         left: 0;
         top: 0;
-        background-image: url('https://identity-dev.reg-dev.companyx.nz/static/images/background.aea570de5c40487396ee.jpg');
+        background-image: url('{{baseUrl}}/static/images/background.aea570de5c40487396ee.jpg');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
 
-      .forgot-password-container {
+      .signup-container {
         position: relative;
         padding: 4rem;
         display: flex;
@@ -53,10 +52,11 @@
         max-width: 200px;
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
+        background-image: url('{{baseUrl}}/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
       }
 
-      .body {
+      .body,
+      #verificationInfoText {
         color: #6c727a;
         font-size: 0.9rem;
         font-weight: 400;
@@ -67,9 +67,7 @@
         font-weight: 600;
       }
 
-      #continue,
-      .sendCode,
-      .verifyCode {
+      #continue {
         margin-left: auto;
         height: 100%;
         font-size: 0.9rem;
@@ -102,20 +100,10 @@
         color: white;
         border: none;
       }
-      
-      #continue:hover,
-      .sendCode:hover,
-      .verifyCode:hover {
+
+      #continue:hover {
         background: #ab4e06;
         cursor: pointer;
-      }
-
-      #continue:disabled,
-      #continue[disabled],
-      #continue:disabled:hover {
-        opacity: 0.5;
-        cursor: not-allowed;
-        background: #db640b;
       }
 
       /* Remove additional Microsoft elements */
@@ -123,12 +111,13 @@
       #api .heading,
       #api .intro,
       #api .divider,
+      #email_ver_input_label,
       #api .entry .entry-item label {
         display: none;
       }
 
-      #api {
-        margin-top: -1rem;
+      .VerificationControl {
+        display: none;
       }
 
       #attributeList ul {
@@ -142,6 +131,10 @@
 
       .attrEntry {
         position: relative;
+      }
+
+      .helpLink {
+        display: none;
       }
 
       /* Microsoft input elements */
@@ -169,19 +162,31 @@
       }
 
       #attributeList ul .EmailBox .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/email-icon.svg);
+        content: url({{assetsUrl}}/email-icon.svg);
       }
 
-      .email_li.email .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/email-icon.svg);
+      #attributeList ul .TextBox .attrEntry::before {
+        content: url({{assetsUrl}}/email-icon.svg);
       }
 
-      .VerificationCode .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
+      #attributeList ul .Password .attrEntry::before {
+        content: url({{assetsUrl}}/password-icon.svg);
       }
 
-      .Password .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
+      #attributeList ul:nth-child(3) .attrEntry::before {
+        content: url({{assetsUrl}}/password-icon.svg);
+      }
+
+      #attributeList ul > li.TextBox:nth-child(4) .attrEntry::before {
+        content: url({{assetsUrl}}/user-icon.svg);
+      }
+
+      #attributeList ul > li.TextBox:nth-child(5) .attrEntry::before {
+        content: url({{assetsUrl}}/user-icon.svg);
+      }
+
+      #attributeList ul > li.TextBox:nth-child(6) .attrEntry::before {
+        content: url({{assetsUrl}}/user-icon.svg);
       }
 
       /* Input icons */
@@ -207,20 +212,17 @@
         box-shadow: rgb(16 148 229) 0px 0px 0px 1px;;
       }
 
-      #api .buttons {
-        margin-top: 0;
+      #cancel {
+        display: none;
       }
 
-      .verificationControlContent .buttons {
-        display: flex !important;
-        margin-top: 1rem !important;
-      }
-
-      #emailVerificationControl_success_message {
+      .buttons {
+        display: flex;
         margin-top: 1rem;
-        color: #6c727a;
-        font-size: 0.9rem;
-        font-weight: 400;
+      }
+
+      .buttons.verify {
+        margin-top: 0rem;
       }
 
       .error.itemLevel {
@@ -232,39 +234,24 @@
         margin-left: 0.5rem;
         overflow: scroll;
         max-height: 18px;
-        height: 0px;
-      }
-
-      .error.itemLevel.show {
-        height: 15px;
       }
 
       .error.pageLevel {
         color: #E53E3E;
-        margin-top: 2rem;
       }
 
       .error {
         font-size: 14px;
       }
 
-      #attributeVerification .buttons {
-        flex-direction: row-reverse;
-        display: flex;
+      .signIn {
+        color: #6c727a;
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin-top: -1.5rem;
       }
 
-      #cancel,
-      .sendNewCode,
-      #emailVerificationControl_but_change_claims {
-        padding: 0px;
-        background-color: transparent;
-        border: none;
-      }
-
-      #cancel,
-      .sendNewCode,
-      .signIn-link,
-      #emailVerificationControl_but_change_claims {
+      .signIn-link {
         cursor: pointer;
         text-decoration: underline;
         outline: transparent solid 2px;
@@ -273,76 +260,33 @@
         font-size: 0.9rem;
       }
 
-      #emailVerificationControl_error_message {
-        color: #E53E3E;
-        font-size: 0.9rem;
-        font-weight: 400;
-      }
-
-      #emailVerificationControl_but_change_claims {
-        margin-right: auto;
-      }
     </style>
   </head>
-
-  <body>
-    <div class="background">
-      <div class="forgot-password-container">
-        <div class="logo" ></div>
-        <div>
-          <h2 class="heading">Reset password</h2>
-          <p class="body">Enter your sign in email address to get sent a verification code.</p>
+    <body>
+      <div class="background">
+        <div class="signup-container">
+          <div class="logo" ></div>
+          <br>
+          <div id="api" role="main"></div>
+          <p class="signIn">Have an account? <a class="signIn-link" href="{{baseUrl}}">Sign in here</a></p>
         </div>
-        <div id="api" role="main"></div>
       </div>
-    </div>
-    <script>
-      function changeSendCodeButtonText() {
-        var sendCodeButton = document.getElementById("emailVerificationControl_but_send_new_code");
-        sendCodeButton.innerHTML = "Didn't get the code? Click to resend";
-      }
-      
-      // Replace success message text with loading after send code clicked
-      function setLoading() {
-        var successMessage = document.getElementById("emailVerificationControl_success_message");
-        setTimeout(function() {
-          successMessage.innerHTML = "Sending Verification Code...";
-          successMessage.style.display = "block"
-        }, 10);
-      }
-
-
-      function attachSendCodeListener() {
-        var sendCodeButton = document.getElementById("emailVerificationControl_but_send_code");
-        sendCodeButton.addEventListener("click", setLoading);
-      }
-
-      // Listen for success message and enable continue button
-      function listenForSuccess() {
-        var continueButton = document.getElementById("continue");
-        continueButton.disabled = true;
-        var successMessage = document.getElementById("emailVerificationControl_success_message");
-        var successMessageObserver = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type == "attributes") {
-              if (mutation.target.style.display !== 'none' && mutation.target.innerText.includes("E-mail address verified")) {
-                successMessageObserver.disconnect();
-                continueButton.disabled = false;
-              }
-            }
-          });
-        });
-        successMessageObserver.observe(successMessage, { attributes: true });
-      }
-
-      function main(){
-        changeSendCodeButtonText();
-        attachSendCodeListener();
-        listenForSuccess();
-      }
-
-      main();
-    </script>
-  </body>
+      <script type="text/javascript" defer >
+        function fixPasswordError() {
+          var elements = document.querySelectorAll(".Password .attrEntry .error.itemLevel");
+          setTimeout(() => {
+            elements.forEach(element => {
+              element.innerHTML = "Must be at least 8 characters with number and uppercase";
+            });
+          }, 10);
+        }
+  
+        function customizeErrorMessage() {
+          var button = document.querySelector("#continue");
+          button.innerHTML = "Register";
+          button.addEventListener("click", fixPasswordError);
+        }
+        customizeErrorMessage();
+      </script>
+    </body>
 </html>
-

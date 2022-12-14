@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>Transport Insights - Te Ringa Maimoa</title>
-    <link rel="icon" href="https://identity.dev.transportinsights.nz/favicon.png" type="image/icon type">
-    <link rel="stylesheet" href="./common.css">
+    <link rel="icon" href="https://cx-dan.github.io/Pages/static/favicon.png" type="image/icon type">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <style>
       * {
         box-sizing: border-box;
@@ -25,14 +25,14 @@
         min-height: 100%;
         left: 0;
         top: 0;
-        background-image: url('https://identity-dev.reg-dev.companyx.nz/static/images/background.aea570de5c40487396ee.jpg');
+        background-image: url('https://cx-dan.github.io/Pages/static/images/background.aea570de5c40487396ee.jpg');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
 
-      .signup-container {
+      .login-container {
         position: relative;
         padding: 4rem;
         display: flex;
@@ -53,11 +53,10 @@
         max-width: 200px;
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url('http://identity.dev.transportinsights.nz/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
+        background-image: url('https://cx-dan.github.io/Pages/static/images/transport-insights-logo.b8ab7f15db3aabbc5393.svg');
       }
 
-      .body,
-      #verificationInfoText {
+      .body {
         color: #6c727a;
         font-size: 0.9rem;
         font-weight: 400;
@@ -112,34 +111,12 @@
       #api .heading,
       #api .intro,
       #api .divider,
-      #email_ver_input_label,
       #api .entry .entry-item label {
         display: none;
       }
 
-      .VerificationControl {
-        display: none;
-      }
-
-      #attributeList ul {
-        list-style: none;
-        margin-left: -2.5rem;
-      }
-
-      .attrEntry label {
-        display: none;
-      }
-
-      .attrEntry {
-        position: relative;
-      }
-
-      .helpLink {
-        display: none;
-      }
-
       /* Microsoft input elements */
-      .attrEntry input  {
+      #api .entry .entry-item input {
         width: 100%;
         min-width: 0px;
         outline: transparent solid 2px;
@@ -162,37 +139,18 @@
         margin-bottom: 0.5rem;
       }
 
-      #attributeList ul .EmailBox .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/email-icon.svg);
+      .entry-item {
+        position: relative;
       }
-
-      #attributeList ul .TextBox .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/email-icon.svg);
-      }
-
-      #attributeList ul .Password .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
-      }
-
-      #attributeList ul:nth-child(3) .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/password-icon.svg);
-      }
-
-      #attributeList ul > li.TextBox:nth-child(4) .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/user-icon.svg);
-      }
-
-      #attributeList ul > li.TextBox:nth-child(5) .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/user-icon.svg);
-      }
-
-
-      #attributeList ul > li.TextBox:nth-child(6) .attrEntry::before {
-        content: url(https://cx-dan.github.io/Pages/user-icon.svg);
+      
+      /* Set email input icon */
+      div:first-child.entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/static/assets/email-icon.svg) !important;
       }
 
       /* Input icons */
-      .attrEntry::before  {
+      .entry .entry-item::before  {
+        content: url(https://cx-dan.github.io/Pages/static/assets/password-icon.svg);
         white-space: nowrap;
         height: 18px;
         width: 18px;
@@ -204,18 +162,74 @@
       }
 
       /* Microsoft invalid input */
-      .error.itemLevel.show + input {
+      input.highlightError {
         border-color: rgb(229, 62, 62) !important;
         box-shadow: rgb(229 62 62) 0px 0px 0px 1px !important;
       }
 
-      .attrEntry input:focus {
+      #api .entry .entry-item input:focus {
         border-color: #0083CB;
         box-shadow: rgb(16 148 229) 0px 0px 0px 1px;;
       }
 
-      #cancel {
-        display: none;
+      #forgotPassword {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -3rem;
+      }
+
+      #createAccount, #forgotPassword {
+        cursor: pointer;
+        text-decoration: underline;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        color: #0083CB;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      #forgotPassword:hover, #createAccount:hover {
+        text-decoration: none;
+      }
+
+      /* Microsoft Sign In Button */
+      #next {
+        margin-left: auto;
+        height: 100%;
+        font-size: 0.9rem;
+        padding: 5px;
+        display: inline-flex;
+        appearance: none;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        user-select: none;
+        position: relative;
+        white-space: nowrap;
+        vertical-align: middle;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        width: auto;
+        line-height: 1;
+        border-radius: 2px;
+        font-weight: bold;
+        transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+        transition-duration: 200ms;
+        text-decoration: none;
+        height: 2.5rem;
+        min-width: 2.5rem;
+        font-size: 1rem;
+        padding-inline-start: 1rem;
+        padding-inline-end: 1rem;
+        background: #db640b;
+        color: white;
+        border: none;
+      }
+
+      #next:hover {
+        background: #ab4e06;
+        cursor: pointer;
       }
 
       .buttons {
@@ -223,72 +237,92 @@
         margin-top: 1rem;
       }
 
-      .buttons.verify {
-        margin-top: 0rem;
+      /* Microsoft create account section */
+      .create {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
       }
 
-      .error.itemLevel {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        color: #E53E3E;
-        margin-bottom: -1rem;
-        margin-left: 0.5rem;
-        overflow: scroll;
-        max-height: 18px;
-      }
-
-      .error.pageLevel {
-        color: #E53E3E;
-      }
-
-      .error {
-        font-size: 14px;
-      }
-
-      .signIn {
+      .create p {
         color: #6c727a;
         font-size: 0.9rem;
         font-weight: 400;
-        margin-top: -1.5rem;
       }
 
-      .signIn-link {
-        cursor: pointer;
-        text-decoration: underline;
-        outline: transparent solid 2px;
-        outline-offset: 2px;
-        color: #0083CB;
-        font-size: 0.9rem;
+      .create a {
+        margin-left: 2px;
+      }
+
+      .error {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .error p {
+        margin: 0;
+        position: absolute;
+        color: #E53E3E;
+      }
+
+      .customLabel {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 0.75rem;
+        margin-top: 2rem;
+        border-radius: 0.375rem;
+        border-width: 1px;
+        border-style: solid;
+        border-image: initial;
+        border-color: #b9bfc6;
+      }
+
+      .text {
+        color: #4a4453;
       }
 
     </style>
+
   </head>
-    <body>
-      <div class="background">
-        <div class="signup-container">
-          <div class="logo" ></div>
-          <br>
-          <div id="api" role="main"></div>
-          <p class="signIn">Have an account? <a class="signIn-link" href="https://amcf.b2c.transportinsights.nz/">Sign in here</a></p>
+
+  <body>
+    <div class="background">
+      <div class="login-container">
+        <div class="logo" ></div>
+        <div id="api" role="main"></div>
+        <div>
+          <div class="customLabel"> 
+            <p class="text">
+              No account? 
+              <a href="https://cx-dan.github.io/Pages/home">
+                View without logging in
+              </a>
+            </p>
+          </div>
+          <div class="customLabel"> 
+            <p class="text">
+              First time? Go to the 
+              <a class="chakra-link css-18tdaxr" href="https://pmrt.transportinsights.nz/Home/HelpLink/new-to">
+                introduction page
+              </a>
+            </p>
+          </div>
         </div>
       </div>
-      <script type="text/javascript" defer >
-        function fixPasswordError() {
-          var elements = document.querySelectorAll(".Password .attrEntry .error.itemLevel");
-          setTimeout(() => {
-            elements.forEach(element => {
-              element.innerHTML = "Must be at least 8 characters with number and uppercase";
-            });
-          }, 10);
+    </div>
+    <script>
+      function setRegisterText() {
+        var el = document.getElementById("createAccount");
+        console.log(el);
+        if (el) {
+          el.innerHTML = "Register here";
         }
-  
-        function customizeErrorMessage() {
-          var button = document.querySelector("#continue");
-          button.innerHTML = "Register";
-          button.addEventListener("click", fixPasswordError);
-        }
-        customizeErrorMessage();
-      </script>
-    </body>
+      }
+
+      setRegisterText();
+    </script>
+  </body>
 </html>
